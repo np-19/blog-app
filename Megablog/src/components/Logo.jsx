@@ -1,9 +1,8 @@
-import React from 'react'
-
-const Logo = ({ width = '100px' }) => {
+import logo  from "../assets/logo.png"
+const Logo = ({ width = '' }) => {
   return (
     <div>
-      <img className='h-10' src="./vite.svg" alt="Logo" style={{ width }} />
+      <img className='h-15 w-25' src={logo} alt="Logo" style={{ width }} />
     </div>
   )
 }

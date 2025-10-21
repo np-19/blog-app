@@ -83,10 +83,10 @@ const PostForm = ({ post = null }) => {
       }, [watch, setValue, slugTransform]);
 
        useEffect(() => {
-        if (post && !imgSrc) {
-            const src = bucketService.getFilePreview(post?.featuredImage);
-            setImgSrc(src);
-        }
+        post ? bucketService.getFilePreview(post?.featuredImage).then((src) => {
+        if(!imgSrc) setImgSrc(src);
+        }): null;
+        
     }, []);
 
   return (

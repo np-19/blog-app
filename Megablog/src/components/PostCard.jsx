@@ -6,8 +6,13 @@ const PostCard = ({$id, title, featuredImage}) => {
   const [imgSrc, setImgSrc] = React.useState(null);
 
   React.useEffect(() => {
-    const src = bucketService.getFilePreview(featuredImage);
-    setImgSrc(src);
+    bucketService.getFilePreview(featuredImage)
+      .then((src) => {
+        setImgSrc(src);
+      })
+      .catch((error) => {
+        console.error("Error loading image:", error);
+      });
   }, [featuredImage]);
 
   return (

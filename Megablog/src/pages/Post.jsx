@@ -21,7 +21,6 @@ export default function Post() {
             databaseService.getPost(id).then((post) => {
                 if (post){
                      setPost(post);
-                    console.log(post.featuredImage);                    
                     bucketService.getFilePreview(post?.featuredImage).then((src) => {
                         setImgSrc(src);
                     });
@@ -45,7 +44,6 @@ export default function Post() {
         });
     };
 
-    console.log(imgSrc);
     
     if (loading) {
         return (

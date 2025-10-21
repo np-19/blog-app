@@ -29,10 +29,11 @@ class BucketService {
   }
 
   async getFilePreview(fileId) {
-    return await this.bucket.getFileView({
+    const result = await this.bucket.getFileView({
       bucketId: constants.appwriteBucketId,
       fileId: fileId,
-    });
+    });    
+    return result.href || result; // Return href if it's a URL object, otherwise return result
   }
 }
 

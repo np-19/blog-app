@@ -37,7 +37,7 @@ const Login = () => {
     <div
     className='flex items-center justify-center w-full py-4 sm:py-8 px-4 animate-fade-in'
     >
-        <div className={`mx-auto w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-indigo-100`}>
+        <div className={`mx-auto w-full max-w-lg bg-white rounded-2xl p-6 sm:p-10 shadow-2xl border border-indigo-100`}>
         <div className="mb-4 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />

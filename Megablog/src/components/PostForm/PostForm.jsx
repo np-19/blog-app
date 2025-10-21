@@ -83,15 +83,15 @@ const PostForm = ({ post = null }) => {
       }, [watch, setValue, slugTransform]);
 
        useEffect(() => {
-        post ? bucketService.getFilePreview(post?.featuredImage).then((src) => {
-        if(!imgSrc) setImgSrc(src);
-        }): null;
-        
+        if (post && !imgSrc) {
+            const src = bucketService.getFilePreview(post?.featuredImage);
+            setImgSrc(src);
+        }
     }, []);
 
   return (
     <form onSubmit={handleSubmit(submit)} className="flex flex-wrap">
-            <div className="w-2/3 px-2">
+            <div className="w-full lg:w-2/3 px-2 mb-6 lg:mb-0">
                 <Input
                     label="Title :"
                     placeholder="Title"
@@ -109,7 +109,7 @@ const PostForm = ({ post = null }) => {
                 />
                 <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
             </div>
-            <div className="w-1/3 px-2">
+            <div className="w-full lg:w-1/3 px-2">
                 <Input
                     label="Featured Image :"
                     type="file"
@@ -122,7 +122,7 @@ const PostForm = ({ post = null }) => {
                         <img
                             src={imgSrc}
                             alt={post?.title || "Featured"}
-                            className="rounded-lg h-30 object-cover"
+                            className="rounded-lg max-h-[400px] w-full object-cover"
                         />
                     </div>
                 )}

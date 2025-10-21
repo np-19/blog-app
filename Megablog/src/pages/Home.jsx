@@ -34,7 +34,7 @@ function Home() {
                 <Container>
                     <div className="flex flex-wrap">
                         <div className="p-2 w-full animate-fade-in">
-                            <h1 className="text-3xl font-bold text-gray-700 hover:text-indigo-600 transition-colors">
+                            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-700 hover:text-indigo-600 transition-colors px-4">
                                 No posts available.
                             </h1>
                         </div>
@@ -46,9 +46,9 @@ function Home() {
     return (
         <div className='w-full py-8 page-transition'>
             <Container>
-                <div className='flex flex-wrap'>
+                <div className='flex flex-wrap -mx-2'>
                     {posts.map((post, index) => (
-                        <div key={post.$id} className='p-2 w-1/4 card-item'>
+                        <div key={post.$id} className='p-2 w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 card-item'>
                             <PostCard {...post} />
                         </div>
                     ))}

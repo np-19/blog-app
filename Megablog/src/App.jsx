@@ -30,7 +30,7 @@ import { Outlet, RouterProvider, Route  } from 'react-router';
 
   return (
     !loading ? (
-      <div className="min-h-screen w-full flex flex-wrap content-between bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 animate-fade-in">
+      <div className="min-h-full w-full flex flex-wrap content-between bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 animate-fade-in">
         <div className="w-full block">
           <Header />
           <main className="min-h-[90vh]">

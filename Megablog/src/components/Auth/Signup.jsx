@@ -33,19 +33,19 @@ const Signup = () => {
   };
 
   return (
-    <div className="flex items-center justify-center py-8 animate-fade-in">
+    <div className="flex items-center justify-center py-4 sm:py-8 px-4 animate-fade-in">
       <div
-        className={`mx-auto w-full max-w-lg bg-white rounded-2xl p-10 shadow-2xl border border-indigo-100`}
+        className={`mx-auto w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-indigo-100`}
       >
         <div className="mb-4 flex justify-center">
           <span className="inline-block w-full max-w-[100px]">
             <Logo width="100%" />
           </span>
         </div>
-        <h2 className="text-center text-3xl font-bold leading-tight text-gray-800">
+        <h2 className="text-center text-2xl sm:text-3xl font-bold leading-tight text-gray-800">
           Sign up to create account
         </h2>
-        <p className="mt-2 text-center text-base text-gray-600">
+        <p className="mt-2 text-center text-sm sm:text-base text-gray-600">
           Already have an account?&nbsp;
           <Link
             to="/login"

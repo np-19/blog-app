@@ -182,5 +182,62 @@ body {
   animation: scaleFade 0.3s ease-out forwards;
 }
 
+/* Staggered fade in for cards */
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-item {
+  animation: cardFadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.card-item:nth-child(1) { animation-delay: 0.1s; }
+.card-item:nth-child(2) { animation-delay: 0.15s; }
+.card-item:nth-child(3) { animation-delay: 0.2s; }
+.card-item:nth-child(4) { animation-delay: 0.25s; }
+.card-item:nth-child(5) { animation-delay: 0.3s; }
+.card-item:nth-child(6) { animation-delay: 0.35s; }
+.card-item:nth-child(7) { animation-delay: 0.4s; }
+.card-item:nth-child(8) { animation-delay: 0.45s; }
+.card-item:nth-child(n+9) { animation-delay: 0.5s; }
+
+/* Mobile Responsive Typography */
+@media (max-width: 640px) {
+  .browser-css h1 {
+    font-size: 1.75rem;
+  }
+  
+  .browser-css h2 {
+    font-size: 1.5rem;
+  }
+  
+  .browser-css h3 {
+    font-size: 1.25rem;
+  }
+
+  /* Hide scrollbar on mobile for cleaner look */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .browser-css h1 {
+    font-size: 2rem;
+  }
+  
+  .browser-css h2 {
+    font-size: 1.75rem;
+  }
+}
 
 

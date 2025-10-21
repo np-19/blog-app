@@ -15,7 +15,7 @@ const LogoutButton = () => {
   return (
     <div>
       <button 
-      className='inline-block px-6 py-2 duration-300 hover:bg-red-50 hover:text-red-600 text-gray-700 font-medium rounded-full transition-all'
+      className='inline-block px-4 lg:px-6 py-2 duration-300 hover:bg-red-50 hover:text-red-600 text-gray-700 font-medium rounded-full transition-all text-sm lg:text-base'
        onClick={handleLogout}>Logout</button>
     </div>
   )

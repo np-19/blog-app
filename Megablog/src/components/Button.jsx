@@ -12,7 +12,7 @@ const Button = ({
     <button
       type={type}
       disabled={disabled}
-      className={`${bgColor} ${textColor} ${className} rounded-lg py-2.5 px-6 hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold ${
+      className={`${bgColor} ${textColor} ${className} rounded-lg py-2 sm:py-2.5 px-4 sm:px-6 hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold text-sm sm:text-base ${
         disabled ? 'opacity-50 cursor-not-allowed hover:scale-100' : 'cursor-pointer'
       }`}
       {...props}

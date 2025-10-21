@@ -58,34 +58,56 @@ export default function Post() {
     }
 
     return post ? (
-        <div className="py-8 page-transition">
+        <div className="py-4 sm:py-8 page-transition">
             <Container>
-                <div className="w-full flex justify-center mb-6 relative border-2 border-indigo-200 rounded-2xl p-3 bg-white shadow-lg overflow-hidden">
-                    <img
-                        src={imgSrc}
-                        alt={post.title}
-                        className="rounded-xl max-h-[500px] object-cover"
-                    />
-
-                    {isAuthor && (
-                        <div className="absolute right-6 top-6 flex gap-2">
-                            <Link to={`/edit-post/${post.$id}`}>
-                                <Button bgColor="bg-gradient-to-r from-emerald-600 to-teal-600" className="shadow-lg">
-                                    Edit
-                                </Button>
-                            </Link>
-                            <Button bgColor="bg-gradient-to-r from-red-600 to-rose-600" onClick={deletePost} className="shadow-lg">
-                                Delete
-                            </Button>
+                {/* Main Content - Image and Text Side by Side on Desktop */}
+                <div className="flex flex-col lg:flex-row gap-6">
+                    {/* Featured Image Section */}
+                    <div className="w-full lg:w-2/5 flex-shrink-0">
+                        <div className="sticky top-24">
+                            {/* Image Card */}
+                            <div className="bg-white rounded-2xl p-3 shadow-xl border-2 border-indigo-200 overflow-hidden">
+                                <img
+                                    src={imgSrc}
+                                    alt={post.title}
+                                    className="rounded-xl w-full h-auto object-cover"
+                                />
+                            </div>
                         </div>
-                    )}
-                </div>
-                <div className="w-full mb-6 bg-white rounded-xl p-6 shadow-md">
-                    <h1 className="text-4xl font-bold text-gray-800 mb-2">{post.title}</h1>
-                </div>
-                <div className="browser-css bg-white rounded-xl p-8 shadow-md prose prose-lg max-w-none">
-                    {parse(post.content)}
                     </div>
+
+                    {/* Post Content */}
+                    <div className="flex-1 bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-xl border border-indigo-100">
+                        {/* Title and Actions */}
+                        <div className="flex items-start justify-between gap-4 mb-6">
+                            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
+                                {post.title}
+                            </h1>
+                            {isAuthor && (
+                                <div className="flex gap-2 flex-shrink-0">
+                                    <Link to={`/edit-post/${post.$id}`}>
+                                        <Button bgColor="bg-gradient-to-r from-emerald-600 to-teal-600" className="shadow-lg">
+                                            Edit
+                                        </Button>
+                                    </Link>
+                                    <Button bgColor="bg-gradient-to-r from-red-600 to-rose-600" onClick={deletePost} className="shadow-lg">
+                                        Delete
+                                    </Button>
+                                </div>
+                            )}
+                        </div>
+
+                        {/* Divider */}
+                        <div className="mb-6">
+                            <div className="h-1 w-24 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 rounded-full"></div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="browser-css prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+                            {parse(post.content)}
+                        </div>
+                    </div>
+                </div>
             </Container>
         </div>
     ) : null;

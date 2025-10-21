@@ -35,16 +35,16 @@ const Login = () => {
 
   return (
     <div
-    className='flex items-center justify-center w-full py-8 animate-fade-in'
+    className='flex items-center justify-center w-full py-4 sm:py-8 px-4 animate-fade-in'
     >
-        <div className={`mx-auto w-full max-w-lg bg-white rounded-2xl p-10 shadow-2xl border border-indigo-100`}>
+        <div className={`mx-auto w-full max-w-lg bg-white rounded-2xl p-6 sm:p-8 shadow-2xl border border-indigo-100`}>
         <div className="mb-4 flex justify-center">
                     <span className="inline-block w-full max-w-[100px]">
                         <Logo width="100%" />
                     </span>
         </div>
-        <h2 className="text-center text-3xl font-bold leading-tight text-gray-800">Sign in to your account</h2>
-        <p className="mt-2 text-center text-base text-gray-600">
+        <h2 className="text-center text-2xl sm:text-3xl font-bold leading-tight text-gray-800">Sign in to your account</h2>
+        <p className="mt-2 text-center text-sm sm:text-base text-gray-600">
                     Don't have any account?&nbsp;
                     <Link
                         to="/signup"

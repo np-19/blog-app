@@ -28,14 +28,11 @@ class BucketService {
     return true;
   }
 
-  getFilePreview(fileId) {
-    // Returns a URL string for viewing the file
-    // Using getFileView instead of getFilePreview to avoid transformation limits on free plan
-    const url = this.bucket.getFileView(
-      constants.appwriteBucketId,
-      fileId
-    );
-    return url.toString();
+  async getFilePreview(fileId) {
+    return await this.bucket.getFileView({
+      bucketId: constants.appwriteBucketId,
+      fileId: fileId,
+    });
   }
 }
 
